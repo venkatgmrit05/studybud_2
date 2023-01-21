@@ -4,8 +4,15 @@ from django.http import HttpResponse
 # Create your views here.
 
 
+rooms = [
+    {'id': 1, 'name': 'lets learn python'},
+    {'id': 2, 'name': 'Design with me'},
+    {'id': 3, 'name': 'Front end devs'},
+]
+
+
 def home(request):
-    return render(request, 'home.html')
+    return render(request, 'home.html', {'rooms': rooms})
 
 
 def room(request):
